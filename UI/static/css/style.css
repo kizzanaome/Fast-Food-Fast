@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0%;
+    font-family: sans-serif;
+}
+
+.container {
+    height: 100vh;
+    background: #eeeeee;
+}
+
+header{
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    background: #ffffff;
+    color: #777777;
+    box-shadow: 1px -3px 10px 0 #666666;
+}
+
+section{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    justify-content: center;
+
+}
+
+.logo-wrapper {
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.logo{
+    height: 50px;
+    
+    width: 50px;
+    background: #000000;
+}
+
+.title {
+    height:100%;
+    display: grid;
+    align-content: center;
+    margin-left: 20px;
+    
+}
+h4 {
+    font-size: 20px;
+}
+
+#img-wrapper{
+    background: #555555;
+    height: 90vh;
+    width: 100%;
+    position: relative;
+
+}
+
+.content-wrapper {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+    position: absolute;
+    top: 0%;
+    left: 0;
+    display: grid;
+    grid-template-rows: 80% 20%;
+   
+}
+
+
+#img-wrapper >img{
+    height: 100%;
+    width: 100%;
+}
+
+.description {
+display: grid;
+justify-self:center;
+align-self: center;
+text-align: center;
+}
+.description > p{
+    margin-left: 30%;
+    margin-right: 30%;
+    line-height: 30px;
+    color: #cccccc;
+    font-size: 20px;
+}
+
+
+.buttons{
+    padding: 40px;
+    display: flex;
+    margin:auto;
+
+    
+}
+
+a{
+    text-decoration: none;
+    padding: 15px 50px ;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 20px;
+
+   
+}
+
+
+#login-btn{
+
+    background: #2979ff;    
+}
+
+#signup-btn{
+    background: #D40E52;
+    margin-left: 40px;
+}
