@@ -18,6 +18,10 @@ Fast-Food-Fast is a food delivery service app for a restaurant.
 - `View orders` admin User can view all orders created
 - `view a single order` admin User can fetch a specific order by its id
 
+
+# To view the API on Heroku 
+https://naome-fast-foods-api-heroku.herokuapp.com/api/v1/orders
+
 ## Installation
 First clone this repository
 ```
