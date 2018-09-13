@@ -10,4 +10,5 @@ omit =
     */renamed/*
     */ignored/*
     */.vscode/*
+    */tests/*
     
