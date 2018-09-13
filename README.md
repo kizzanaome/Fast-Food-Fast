@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/kizzanaome/Fast-Food-Fast/badge.svg?branch=develop)](https://coveralls.io/github/kizzanaome/Fast-Food-Fast?branch=develop)
+
 # Fast-Food-Fast
 Fast-Food-Fast is a food delivery service app for a restaurant.
 
@@ -8,12 +10,13 @@ Fast-Food-Fast is a food delivery service app for a restaurant.
 - `python-pip` - Package management system used to install and manage software packages,its a replacemnt of easy_install
 
 ## Functionality
-
-- `Add order` Enables user to create his/her food order
+- `Add food_item` Enables admin user to create a food item
+- `Get food_item` Enables user to view the food items available
+- `Add order` Enables user to place a  desired food order
 - `Edit order` Enables an admin user to edit the status of an order
 - `Delete order` User can delete an order
-- `View orders` User can view all orders created
-- `view a single order` User can get fetch a specific order by its id
+- `View orders` admin User can view all orders created
+- `view a single order` admin User can fetch a specific order by its id
 
 ## Installation
 First clone this repository
@@ -45,15 +48,17 @@ pytest
 This API is versioned using url versioning starting, with the letter 'v'
 This is version one"v1" of the API
 ```
-
 ## End Points
-|           End Point                      |     Functionality     |
-|   -------------------------------------- |-----------------------|
-|     POST api/v1/orders                   | Place a new order     |  
-|     GET  api/v1/orders                   | Get all the orders.   |   
-|     GET  api/v1/orders/order_id          |Fetch a specific order |  
-|     PUT api/v1/orders/order_id           |Update the status of an order.|
-|     DELETE api/v1/orders                 |Delete a specific order|   
+                |           End Point                      |     Functionality     |
+                |   -------------------------------------- |-----------------------|
+                |     POST api/v1/orders                   | Place a new order     |  
+                |     GET  api/v1/orders                   | Get all the orders.   |   
+                |     GET  api/v1/orders/order_id          |Fetch a specific order |  
+                |     PUT api/v1/orders/order_id           |Update the status of an order.|
+                |     DELETE api/v1/orders                 |Delete a specific order|   
+                |     POST api/v1/food_items               |Create a food_item     |   
+                |     GET api/v1/food_items                |Fetch all food_items   |   
+
 
 
 ## Contributors
