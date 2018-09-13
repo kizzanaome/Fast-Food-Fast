@@ -1,2 +1,60 @@
 # Fast-Food-Fast
 Fast-Food-Fast is a food delivery service app for a restaurant.
+
+## Requirements
+- `Python3.4` - programming language that can be used on any modern computer operating system. 
+- `Flask` - Python based web framework
+- `Virtualenv` - Allows you to work on a specific project without worry of affecting other projects.
+- `python-pip` - Package management system used to install and manage software packages,its a replacemnt of easy_install
+
+## Functionality
+
+- `Add order` Enables user to create his/her food order
+- `Edit order` Enables an admin user to edit the status of an order
+- `Delete order` User can delete an order
+- `View orders` User can view all orders created
+- `view a single order` User can get fetch a specific order by its id
+
+## Installation
+First clone this repository
+```
+$ git clone https://github.com/kizzanaome/Fast-Food-Fast/tree/develop
+$ cd Fast-Food-Fast
+```
+Create virtual environment and install it
+```
+$ virtualenv venv
+$ source/venv/bin/activate
+```
+Then install all the necessary dependencies
+```
+pip install -r requirements.txt
+```
+
+## Run the application
+At the terminal or console type
+```
+python run.py
+```
+To run tests run this command at the console/terminal
+```
+pytest
+```
+## Versioning
+```
+This API is versioned using url versioning starting, with the letter 'v'
+This is version one"v1" of the API
+```
+
+## End Points
+|           End Point                      |     Functionality     |
+|   -------------------------------------- |-----------------------|
+|     POST api/v1/orders                   | Place a new order     |  
+|     GET  api/v1/orders                   | Get all the orders.   |   
+|     GET  api/v1/orders/order_id          |Fetch a specific order |  
+|     PUT api/v1/orders/order_id           |Update the status of an order.|
+|     DELETE api/v1/orders                 |Delete a specific order|   
+
+
+## Contributors
+- Naome
