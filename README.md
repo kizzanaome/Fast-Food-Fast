@@ -20,8 +20,9 @@ Fast-Food-Fast is a food delivery service app for a restaurant.
 
 
 ## To view the API on Heroku 
+Copy this url paste it in a new tab
 ```
-https://naome-fast-foods-api-heroku.herokuapp.com/api/v1/orders
+- https://naome-fast-foods-api-heroku.herokuapp.com/api/v1/orders
 
 ```
 
