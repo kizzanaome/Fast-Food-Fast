@@ -49,15 +49,15 @@ This API is versioned using url versioning starting, with the letter 'v'
 This is version one"v1" of the API
 ```
 ## End Points
-                |           End Point                      |     Functionality     |
-                |   -------------------------------------- |-----------------------|
-                |     POST api/v1/orders                   | Place a new order     |  
-                |     GET  api/v1/orders                   | Get all the orders.   |   
-                |     GET  api/v1/orders/order_id          |Fetch a specific order |  
-                |     PUT api/v1/orders/order_id           |Update the status of an order.|
-                |     DELETE api/v1/orders                 |Delete a specific order|   
-                |     POST api/v1/food_items               |Create a food_item     |   
-                |     GET api/v1/food_items                |Fetch all food_items   |   
+|           End Point                      |     Functionality     |
+|   -------------------------------------- |-----------------------|
+|     POST api/v1/orders                   | Place a new order     |  
+|     GET  api/v1/orders                   | Get all the orders.   |   
+|     GET  api/v1/orders/order_id          |Fetch a specific order |  
+|     PUT api/v1/orders/order_id           |Update the status of an order.|
+|     DELETE api/v1/orders                 |Delete a specific order|   
+|     POST api/v1/food_items               |Create a food_item     |   
+|     GET api/v1/food_items                |Fetch all food_items   |   
 
 
 
