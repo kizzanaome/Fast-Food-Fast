@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.vscode/
+ *.py[cod]
+*$py.class
+ @@ -26,12 +28,17 @@ wheels/
+MANIFEST
+venv/
+.vscode/
+.vscode/
+.vscode/
+ # PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+.vscode/
+ # Installer logs
+pip-log.txt
+@@ -48,6 +55,8 @@ coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+.vscode/
+ # Translations
+*.mo
+@@ -104,3 +113,5 @@ venv.bak/
+ # mypy
+.mypy_cache/
+.vscode/
