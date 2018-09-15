@@ -1,0 +1,221 @@
+/*home */
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+nav{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: auto;
+    color: #555;
+    justify-items: center;
+    align-items: center;
+}
+
+.profile{
+    height: 40px;
+    width: 40px;
+    background: #000;
+    padding: 10px;
+    border-radius: 50%;
+}
+a{
+    color: #555;
+    display: inline-block;
+    font-size: 1.5vw;
+    text-align: center;
+}
+.wrapper{
+    padding: 55px 0;
+    height: 85vh;
+    position: relative;
+    
+}
+.img-div{
+    height: 300px;
+    position: relative;
+    
+}
+.img-div > img{
+    width: 100%;
+    height:100%;
+}
+.description{
+    overflow-x: hidden;
+    color: #eee;
+    height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8), rgba(0,0,0,1));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.content{
+    height: auto;
+    background: #eee;
+    display: grid;
+    grid-template-columns: 290px  70%;
+    justify-content: center;
+   
+}
+.side-menu{
+    height: 60vh;
+    
+    background: #eee;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+   
+}
+ul  li{
+    text-align: center;
+    background: #000;
+    margin: 40px;
+}
+.side-menu ul li  a{
+    
+}
+ul li ul li{
+    display: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #000;
+    border-bottom: 2px;
+}
+ul li:hover ul li{
+    display: block;
+}
+.side-menu ul li ul li >a{
+    border-radius: 0;
+    width: 91.5%;
+    color: #000;
+    margin-bottom: 2px;
+}
+
+.side-menu ul li ul li:hover a{
+    background: #555;
+    color: #fff;
+}
+
+.content-wrapper{
+    height: auto;
+    background: #fff;
+    padding: 10px;
+}
+
+.search{
+    background: #fff;
+    height: 100px;
+    display: grid;
+    align-content: center;
+}
+
+.add{
+    height: 15%;
+    display: grid;
+    margin: 0;
+    padding: 0;
+}
+.add > a{
+    background: #555;
+    margin: 0;
+}
+
+input{
+    font-family: ubuntu;
+    color: #555;
+    font-size: 20px;
+}
+
+input[type = "text"]{
+    height: 20px;
+    padding: 10px;
+    
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    border:1px solid #999;
+}
+#search-btn{
+    height: 30px;
+    padding-top:9px ;
+    padding-bottom: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background: #d40e52;
+    color: #fff;
+}
+.foods{
+    height: auto;;
+    
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3px;
+}
+.food-cards{
+    height: 300px;
+    width: 270px;
+    background: #fff;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-shadow: 1px 1px 15px 0 #ccc;
+    margin-top: 10px;
+}
+.img{
+    height: 55%;
+    
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    overflow: hidden;
+}
+.img > img{
+    height: 100%;
+    width: 100%;
+}
+.img:hover > img{
+    height: 107%;
+    width: 107%;
+    cursor: pointer;
+    overflow: hidden;
+}
+.desc{
+    height: 30%;
+    background: #fff;
+}
+.add{
+    height: 15%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+#add-btn{
+    width: 140px;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    background: #d40e52;
+    color: #fff;
+}
+.view {
+    border: 1px solid #d40e52;
+    padding: 6px;
+    font-size:17px ;
+}
+.desc h3{
+    padding: 10px;
+    font-family: ubuntu;
+}
+.desc  span{
+    color: #555;
+}

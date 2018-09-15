@@ -1,0 +1,140 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.side-menu{
+    height: 60vh;
+   padding-top: 45px;
+    background: #fff;
+    width: 85%;
+}
+
+.wrapper{
+    padding: 99px 0;
+    height: 85vh;
+    width: 100%;
+    position: relative; 
+   
+}
+.content{
+    height:auto;
+    background: #eee;
+    grid-template-columns: 330px  75%;
+    background: #fff;
+
+}
+
+.content-wrapper{
+    height: 80vh;
+    background: #fff;
+    padding-top: 20px;
+    overflow-y: scroll;
+}
+
+.profile{
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.side-menu nav {
+    display: block;
+    margin: 0;
+    background: #f10658;
+    height: 500px;
+}
+.side-menu nav > a{
+    border-radius: 0;
+    display: block;
+    margin-bottom: 2px;
+    background: #d40e52;;
+    color: #fff;
+}
+.side-menu nav a:hover{
+    background: #eb3474;
+}
+
+.addFoodItem{
+    height: 10%;
+    width: 100px;
+}
+.addFoodItem > a{
+    background: #d40e52;
+    margin: 0;
+    width: 150px;
+    color: #ccc;
+}
+#del-btn{
+    width: 100px;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    background: #d40e52;
+    color: #fff;
+}
+#edit-Food-btn{
+    width: 100px;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    background: #d40e52;
+    color: #fff;
+}
+
+#list td{
+    padding: 18px;
+    background: #eee;
+    color: #777;
+    font-size: 16px;
+}
+#list th{
+    background: #d40e52;
+    color: #fff;
+    font-size: 18px;
+}
+
+#list :last-child{
+    background: #db0e56;
+    color: #fff;
+    font-size: 16px;
+}
+#list td > #accept{
+   color: #db1359;
+}
+#list td > #decline{
+    background: #eb2c6f;
+
+}
+
+
+.container {
+    padding: 20px;
+    padding-top: 17px;
+    opacity: 1;
+    background: #fff;
+    
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    padding-top: 20px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: transparent;
+    margin: 3% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 35%; /* Could be more or less, depending on screen size */
+}
