@@ -3,46 +3,138 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>3f</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="static/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="static/css/css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="static/css/css/animate.min.css"/>
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="UI/static/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="UI/static/css/login-signup.css" />
+
+   
 </head>
 <body>
-    <div class="container">
-        <header>
-            <section>
-                <div class="logo-wrapper">
-                    <div class="logo"></div>
-                </div>
-                <div class="title">
-                    <h4>Fast-Food-Fast</h4>
-                </div>
-            </section>
-            <section>
-                    <i class="fa fa-facebook"></i>
-                    <span class="fa fa-home"></span>
-                    <span class="fa fa-youtube"></span>
-            </section>
-        </header>
-        <div id="img-wrapper" class="wow slideInLeft">
-
-            <img src="static/images/bg.jpg">
-            <img src="static/images/bg1.jpg">
-           <!-- <div class="content-wrapper">
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio facere veritatis nulla tempore. Quaerat, numquam libero. Sit natus fugiat consequuntur eius, quia ducimus voluptatibus ipsam, repudiandae hic, sunt expedita nesciunt.</p>
-                </div>
-                <div class="buttons">
-                    <a href="#" id="login-btn">Login</a>
-                    <a href="#" id="signup-btn">Signup</a>
-                </div>
-            </div>-->
+    <header>
+        <div class="logo"><p>3F</p></div>
+        <div class="title">
+            <h4>FAST FOODS FIRST</h4>
+            <h5>lorem ipsum</h5>
         </div>
-              
+        <div class="icons">
+            <i class = "fa fa-facebook-square"></i>
+        </div>
+    </header>
+    <div class="wrapper">
+
+        
+        <div class="img-div" id = "slider">
+            <section>
+                    <img src="UI/static/images/1.jpg" />
+                    <img src="UI/static/images/bg.png" />
+                    <img src="UI/static/images/bg1.png" />
+                    <img src="UI/static/images/fish.jpg" />
+                    <img src="UI/static/images/rolex.jpg" />
+            </section>
+        </div>
+
+
+        <div class="description">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <h5>Lorem ipsum dolor sit amet</h5>
+            <ul>
+                <li><i class = "fa fa-check"></i>Affordable Prices</li>
+                <li><i class = "fa fa-check"></i>Enjoy Amazing Discounts</li>
+                <li><i class = "fa fa-check"></i>Best services ever</li>
+                <li><i class = "fa fa-check"></i>It is simple.... Just click<span>signup</span> <br>&nbsp;&nbsp;&nbsp;or simply<span>login </span> if already with us!</li>
+            </ul>
+           <div class="buttons">
+               <a href = "UI/templates/login.html" class="login-btn">login</a>
+               <a href="UI/templates/signup.html" class="signup-btn" >signup</a>
+           </div>
+        </div>
     </div>
- <script src ="static/js/dist/wow.min.js" ></script>
+
+
+              <!--ADMIN LOGIN MODEL-->
+
+        <!--<div id="admin-login" class="modal">-->
+  
+            <!--<form class="modal-content animate">
+                    
+              <div class="imgcontainer">
+                    
+                <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>  
+              </div>
+          
+              <div class="container">
+                 
+                   
+                <label for="uname">Username</label><br />
+                <input type="text" name="uname" required><br />
+          
+                <label for="password">Password</label><br />
+                <input type="password"  name="password" required><br />
+                  
+                <button type="submit">Login</button><br />
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+              </div>
+          
+              <div class="container">
+                <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="password"><a href="#">Forgot password?</a></span>
+              </div>
+
+            </form>
+          </div>-->
+
+
+
+          <!--SIGN UP  PAGE-->
+
+         <div id="signup" class="modal">
+  
+         <form class="modal-content animate">
+                    
+              <div class="imgcontainer">
+                    
+                <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>  
+              </div>
+          
+              <div class="container">
+                 
+                   
+                <label for="uname">Username</label><br />
+                <input type="text" name="uname" required><br />
+
+                <label for="email">Email</label><br />
+                <input type="email" name="email" required><br />
+          
+                <label for="password">Password</label><br />
+                <input type="password"  name="password" required><br />
+
+                <label for="confirm">Confirm Password</label><br />
+                <input type="password"  name="confirm" required><br />
+                  
+                <button type="submit">sign up</button><br />
+                <label>
+                 
+                </label>
+              </div>
+          
+              <div class="container">
+                <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn">Cancel</button>
+              
+              </div>
+
+            </form>
+          </div>
+
+
+
+          <script src="UI/static/js/login.js" ></script>  
+          <script src="UI/static/js/signup.js" ></script> 
+       <script src="UI/static/js/show.js"></script>
+       <script src="UI/static/js/home.js"></script>
+
+          
 </body>
 </html>
