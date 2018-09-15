@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>3f</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/home.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/viewMore.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/history.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/order.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/admin.css" />
+    
+   
+</head>
+<body>
+    <header>
+        <div class="logo"><p>3F</p></div>
+        <div class="title">
+            <h4>FAST FOODS FAST</h4>
+            <h5>lorem ipsum</h5>
+        </div>
+        <div class="icons">
+            <nav>
+                
+                
+                <a href = "../../index.html">Logout</a>
+                <div class="profile">
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="wrapper">
+
+        <!--<div class="description">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <h5>Lorem ipsum dolor sit amet</h5>
+            <ul>
+                <li><i class = "fa fa-check"></i>Affordable Prices</li>
+                <li><i class = "fa fa-check"></i>Enjoy Amazing Discounts</li>
+                <li><i class = "fa fa-check"></i>Best services ever</li>
+                <li><i class = "fa fa-check"></i>It is simple.... Just click<span>signup</span> <br>&nbsp;&nbsp;&nbsp;or simply<span>login </span> if already with us!</li>
+            </ul>
+        </div>-->
+
+        <div class="content">
+            <!--menu-->
+            <div class="side-menu">
+                <nav>
+                        <a href="admin.html" >Food Items</a>
+                    <a href="adminOrder.html">View Orders</a>
+                    
+                    <a href="#">Orders</a>
+                </nav>
+            </div>
+            <!--Foods-->
+            <div class="content-wrapper" id = "content">
+                <div class="addFoodItem">
+                    <a href="#" id = "add-food-btn" onclick = "document.getElementById('addFood').style.display = 'block'">AddFood</a>
+                </div>
+
+                 <!--Add Food model-->
+
+          <div id="addFood" class="modal">
+  
+                <form class="modal-content animate">
+              
+                  <div class="container">
+                            <h1>Add Food</h1>
+                            
+                            <label for = ""> Item Name</label><br />
+                                <input type="text" name = "" /><br />
+
+                                <label for = "">Item price</label><br />
+                                <input type="text" name = "" />
+
+                                <label for = "">Item Image</label><br />
+                                <input type="file" name = "" />
+
+                            <input type="submit" id = "submit" value = "Add">
+                     </div>
+    
+                  <div class="container">
+                        <button type="button" onclick="document.getElementById('addFood').style.display='none'" class="cancelbtn">Back</button>
+                      </div>
+    
+                </form>
+              </div>
+
+               <!--Edit Food model-->
+
+          <div id="editFood" class="modal">
+  
+                <form class="modal-content animate">
+              
+                  <div class="container">
+                            <h1>Edit Food</h1>
+                            
+                            <label for = ""> Item Name</label><br />
+                                <input type="text" name = "" /><br />
+
+                                <label for = "">Item price</label><br />
+                                <input type="text" name = "" />
+
+                                <label for = "">Item Image</label><br />
+                                <input type="file" name = "" />
+
+                            <input type="submit" id = "submit" value = "Save Changes">
+                     </div>
+    
+                  <div class="container">
+                        <button type="button" onclick="document.getElementById('editFood').style.display='none'" class="cancelbtn">Back</button>
+                      </div>
+    
+                </form>
+              </div>
+
+            
+
+              
+                <div class="foods">
+
+                    <!--food card-->
+                    <div class="food-cards">
+                        <div class="img">
+                            <img src = "../static/images/bg1.png" alt = "food"/>
+                        </div>
+                        <div class="desc">
+                            <h3>Food: <span>Pizza</span></h3>
+                            <h3>Price : <span>UgX 50000</span></h3>
+                            
+                        </div>
+                        <div class="add">
+                            <form action="">
+                                    <input type="submit" id = "edit-Food-btn" value = "Edit" onclick = "document.getElementById('editFood').style.display = 'block'">
+                                    <input type="submit" id = "del-btn" value = "Delete" onclick = "document.getElementById('delete').style.display = 'block'">
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--food card-->
+                    <div class="food-cards">
+                            <div class="img">
+                                <img src = "../static/images/bg1.png" alt = "food"/>                    
+                             </div>
+                            <div class="desc">
+                                <h3>Food: <span>Pizza</span></h3>
+                                <h3>Price : <span>UgX 50000</span></h3>
+                                
+                            </div>
+                            <div class="add">
+                                <form action="">
+                                        <input type="submit" id = "edit-Food-btn" value = "Edit" onclick = "document.getElementById('editFood').style.display = 'block'">
+                                    <input type="submit" id = "del-btn" value = "Delete" onclick = "document.getElementById('delete').style.display = 'block'">
+                                </form>
+                            </div>
+                        </div>
+
+                        <!--food card-->
+
+                        <div class="food-cards">
+                                <div class="img">
+                                    <img src = "../static/images/bg1.png" alt = "food"/>                                </div>
+                                <div class="desc">
+                                    <h3>Food: <span>Pizza</span></h3>
+                                    <h3>Price : <span>UgX 50000</span></h3>
+                                    
+                                </div>
+                                <div class="add">
+                                    <form action="">
+                                            <input type="submit" id = "edit-Food-btn" value = "Edit" onclick = "document.getElementById('editFood').style.display = 'block'">
+                                    <input type="submit" id = "del-btn" value = "Delete" onclick = "document.getElementById('delete').style.display = 'block'">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!--food card-->
+
+                        <div class="food-cards">
+                                <div class="img">
+                                    <img src = "../static/images/bg1.png" alt = "food"/>                                </div>
+                                <div class="desc">
+                                    <h3>Food: <span>Pizza</span></h3>
+                                    <h3>Price : <span>UgX 50000</span></h3>
+                                    
+                                </div>
+                                <div class="add">
+                                    <form action="">
+                                            <input type="submit" id = "edit-Food-btn" value = "Edit" onclick = "document.getElementById('editFood').style.display = 'block'">
+                                    <input type="submit" id = "del-btn" value = "Delete" onclick = "document.getElementById('delete').style.display = 'block'">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!--food card-->
+
+                        <div class="food-cards">
+                                <div class="img">
+                                    <img src = "../static/images/bg1.png" alt = "food"/>                                </div>
+                                <div class="desc">
+                                    <h3>Food: <span>Pizza</span></h3>
+                                    <h3>Price : <span>UgX 50000</span></h3>
+                                    
+                                </div>
+                                <div class="add">
+                                    <form action="">
+                                            <input type="submit" id = "edit-Food-btn" value = "Edit" onclick = "document.getElementById('editFood').style.display = 'block'">
+                                    <input type="submit" id = "del-btn" value = "Delete" onclick = "document.getElementById('delete').style.display = 'block'">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!--food card-->
+
+                        <div class="food-cards">
+                                <div class="img">
+                                    <img src = "../static/images/bg1.png" alt = "food"/>                                </div>
+                                <div class="desc">
+                                    <h3>Food: <span>Pizza</span></h3>
+                                    <h3>Price : <span>UgX 50000</span></h3>
+                                    
+                                </div>
+                                <div class="add">
+                                    <form action="">
+                                            <input type="submit" id = "edit-Food-btn" value = "Edit" onclick = "document.getElementById('editFood').style.display = 'block'">
+                                    <input type="submit" id = "del-btn" value = "Delete" onclick = "document.getElementById('delete').style.display = 'block'">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!--food card-->
+
+                        <div class="food-cards">
+                                <div class="img">
+                                    <img src = "../static/images/bg1.png" alt = "food"/>                                </div>
+                                <div class="desc">
+                                    <h3>Food: <span>Pizza</span></h3>
+                                    <h3>Price : <span>UgX 50000</span></h3>
+                                    
+                                </div>
+                                <div class="add">
+                                    <form action="">
+                                            <input type="submit" id = "edit-Food-btn" value = "Edit" onclick = "document.getElementById('editFood').style.display = 'block'">
+                                    <input type="submit" id = "del-btn" value = "Delete" onclick = "document.getElementById('delete').style.display = 'block'">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!--food card-->
+
+                        <div class="food-cards">
+                                <div class="img">
+                                    <img src = "../static/images/bg1.png" alt = "food"/>                                </div>
+                                <div class="desc">
+                                    <h3>Food: <span>Pizza</span></h3>
+                                    <h3>Price : <span>UgX 50000</span></h3>
+                                    
+                                </div>
+                                <div class="add">
+                                    <form action="">
+                                            <input type="submit" id = "edit-Food-btn" value = "Edit" onclick = "document.getElementById('editFood').style.display = 'block'">
+                                    <input type="submit" id = "del-btn" value = "Delete" onclick = "document.getElementById('delete').style.display = 'block'">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!--food card-->
+
+                            <div class="food-cards">
+                                    <div class="img">
+                                        <img src = "../static/images/bg1.png" alt = "food"/>                                    </div>
+                                    <div class="desc">
+                                        <h3>Food: <span>Pizza</span></h3>
+                                        <h3>Price : <span>UgX 50000</span></h3>
+                                    </div>
+                                    <div class="add">
+                                        <form action="">
+                                                <input type="submit" id = "edit-Food-btn" value = "Edit" onclick = "document.getElementById('editFood').style.display = 'block'">
+                                                <input type="submit" id = "del-btn" value = "Delete" onclick = "document.getElementById('delete').style.display = 'block'">
+                                    </div>
+                                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--food modal-->
+
+    <div id="food" class="modal">
+  
+            <form class="modal-content animate">
+          
+              <div class="container">
+                            <div class="view-img">
+                                <img src = "../static/images/bg1.png" alt = "food"/>                            </div>
+                            <div class="food-desc">
+
+                                    <div class="desc">
+                                            <h5>Food: <span>Pizza</span></h5>
+                                            <h5>Price : <span>UgX 50000</span></h5>
+                                        </div>
+                                <p>Description</p>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, deserunt corporis fugiat nam eum recusandae deleniti suscipit beatae fugit quas consectetur. Dolore aliquid nihil voluptate libero obcaecati nemo, commodi ipsam.</p>
+                            </div>
+                 </div>
+
+              <div class="container">
+                    <button type="button" onclick="document.getElementById('food').style.display='none'" class="cancelbtn">Back</button>
+                  </div>
+
+            </form>
+          </div>
+       <!--   <script src="login.js" type = "text/js"></script>  
+     <script src="signup.js" type = "text/js"></script> -->
+    <script src="../static/js/show.js" type = "text/js"></script>
+    <script src="../static/js/order.js" type = "text/js"></script>
+    <script src="../static/js/history.js" type = "text/js"></script>
+    <script src="../static/js/admin.js" type = "text/js"></script>
+    <script src="../static/js/edit.js" type = "text/js"></script>
+</body>
+</html>
