@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href = "../static/css/login.css" rel = "stylesheet">
+</head>
+<body>
+
+	<div class="wrapper">
+		
+		<div class="form">
+			<form action="admin-login.html" id = "form">
+				<button type = "submit" id = "btn">Login in as Admin</button>
+			</form>
+			<form role = "form" action = "home.html">
+				<h2>Please Login</h2>
+				
+				<label for = "email">Email</label>
+				<input type = "email" name = "email" id = "email" required="enter"/>
+				
+
+				<label for = "password">Password</label>
+				<input type = "password" name = "password" id = "password" required  />
+				
+				<p><input type = "checkbox" name = "checkbox"  onclick = "show()" />&nbsp;&nbsp;Show Password</p>
+
+				
+
+				<button type = "submit" class = "btn" name = "submit" value = "login">Login</button>
+				
+			</form>
+		</div>
+	</div>
+<script src = "../static/js/show.js"></script>
+</body>
+</html>

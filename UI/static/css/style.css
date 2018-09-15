@@ -1,0 +1,384 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: ubuntu;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {background: #eee;}
+
+
+header {
+    height: 15vh;
+    background: #fff;
+    grid-template-columns: 25% 40% 30%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+  
+}
+/*logo div*/
+.logo{
+    border-radius: 50%;
+    border: 2px solid #333;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: #d40e52;
+}
+
+.logo > p{
+    font-size: 30px;
+    font-family: HighlandGothicFLF;
+}
+h4{
+    text-align: left;
+    font-size: 3vw;
+    color: #d40e52;
+}
+
+/*for devices like tablets*/
+@media screen and  (max-width: 860px ){
+
+    header {
+        height: 15vh;
+        background: #fff;
+        grid-template-columns: 20% 50% 30%;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+      position: fixed;
+      z-index: 1000;;
+    }
+    h5{
+        font-size: 4px;
+        font-style: normal;
+        color: #666;
+    }
+
+    .logo{
+    border-radius: 50%;
+    border: 2px solid #333;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: #d40e52;
+}
+    .logo > p{
+        font-size: 20px;
+        font-family: HighlandGothicFLF;
+    }
+
+    h4{
+        text-align: left;
+        font-size: 18px;
+        color: #d40e52;
+        
+    }
+
+}
+/*for mobile phones*/
+@media screen and  (max-width: 425px ){
+
+    header {
+        height: 15vh;
+        background: #fff;
+        grid-template-columns: 20% 60% 20%;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+      
+    }
+
+    .title{
+        display: grid;
+        justify-self: center;
+    
+    }
+    h5{
+        font-size: 3px;
+        color: #666;
+    }
+
+    .logo > p{
+        font-size: 20px;
+        font-family: HighlandGothicFLF;
+    }
+
+    h4{
+        text-align: left;
+        font-size: 16px;
+        color: #d40e52;
+    }
+
+}
+
+@media screen and  (min-width: 860px ){
+
+    header {
+        height: 15vh;
+        background: #fff;
+        grid-template-columns: 20% 50% 30%;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+      
+    }
+
+    .title{
+        display: grid;
+        justify-self: start;
+    }
+    h5{
+        font-size: 7px;
+        color: #666;
+        font-style: normal;
+    }
+ 
+
+    .logo > p{
+        font-size: 28px;
+        font-family: HighlandGothicFLF;
+        
+    }
+
+    h4{
+        text-align: left;
+        font-size: 28px;
+        color: #d40e52;
+        
+    }
+
+}
+
+h5{
+    text-align: left;
+    color: #666;
+    font-size: 16px;
+}
+.title{
+    
+}
+/* image slider*/
+@keyframes slider {
+    0%{
+        left: 0%;
+    }
+    20%{
+        left: 0%;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    75%{
+       left: -300%;
+    }
+    95%{
+        left:-300%;
+    }
+
+}
+.a:hover{
+    opacity: .8;
+}
+#slider{
+    overflow: hidden;
+}
+#slider section img{
+    width: 20%;
+    height: auto;
+    float: left;
+}
+#slider section{
+    position: relative;
+    width: 500%;
+    overflow: hidden;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+
+.wrapper{
+    padding: 55px 0;
+    height: 85vh;
+    position: relative;
+    
+}
+.img-div{
+    height: 300px;
+    position: relative;
+    
+}
+.img-div > img{
+    width: 100%;
+    height:100%;
+}
+.description{
+    overflow-x: hidden;
+    color: #eee;
+    height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8), rgba(0,0,0,1));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.description > h2{
+    color: #ccc;
+    display: grid;
+    align-self: end;
+    margin: 180px 0px 0 0px;
+    font-family: ubuntu;
+}
+ul{
+    margin: 120px 70px 0 20px;
+    width: 40%;
+    list-style: none;
+    display: inline;
+    color: #bbb;
+}
+li{
+    
+    font-family: ubuntu;
+    padding: 10px
+}
+i{
+    padding: 10px;
+}
+.description  h5{
+    width: 50%;
+    
+    color: #ccc;
+    font-family: ubuntu;
+    margin: 5px 0px;
+
+}
+span{
+    color: #fff;
+    padding: 5px;
+    font-family: ubuntu;
+}
+
+@media screen and (max-width: 605px){
+    .img-div{
+        height: 180px;
+        position: relative;
+        overflow: hidden;
+        
+    }
+}
+.buttons{
+ 
+    display: flex;
+    margin:auto auto;
+    width: 50%;
+    
+}
+
+a{
+    text-decoration: none;
+    font-family: ubuntu;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 9px;
+    text-align: center;
+}
+
+.login-btn{
+    width: 200px;
+   color: #2979ff;   
+   background: transparent;
+   border: 1px solid #2979ff; 
+   margin-left: 15%;
+}
+
+.signup-btn{
+    color:#d40e52;;
+    margin-left: 30px;
+    width: 200px;
+    margin-right: 0%;
+    background: transparent;
+    border: 1px solid #d40e52;
+}
+
+.login-btn:hover{
+    background: #2979ff;
+    color: #eee;
+}
+
+.signup-btn:hover{
+    background: #d40e52;
+    color: #eee;
+}
+@media screen and (max-width: 425px ){
+
+    .description{
+        overflow-y: scroll;
+        overflow-x: hidden;
+        color: #eee;
+        height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8), rgba(0,0,0,1));
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .buttons{
+        display: grid;
+        width: 100%;
+        
+    }
+    
+    a{
+        text-decoration: none;
+        font-family: ubuntu;
+        color: #ffffff;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 8px;
+        text-align: center;
+        margin-bottom: 5px;
+    
+    }
+    .login-btn{
+        color: #2979ff;
+        background: transparent;
+        border: 1px solid #2979ff;
+    }
+    
+    .signup-btn{
+        color:#d40e52;;
+        background: transparent;
+        border: 1px solid #d40e52;
+    }
+
+}
+
+
