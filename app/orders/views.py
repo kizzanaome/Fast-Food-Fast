@@ -1,9 +1,9 @@
 from flask import Flask, make_response, jsonify
-from flask_restful import reqparse, Resource
 from .models import Order, orders_db
-from .validate import clean_input
 from app.food_items.models import Food, food_items
-
+from flask_restplus import reqparse, Resource
+import string
+import re
 
 class OrdersList(Resource):
 
@@ -17,40 +17,60 @@ class OrdersList(Resource):
 
     def post(self):
         """ This method adds an order """
-        parser = reqparse.RequestParser()
-        parser.add_argument("food_name",
-                            type=str,
+        parser = reqparse.RequestParser( )
+        parser.add_argument("food_id",
+                            type=int,
                             required=True,
-                            help="The food_category field can't be empty")
-        parser.add_argument("quantity",
-                            type=str,
-                            required=True,
-                            help="The quantity field cant be empty")
+                            help="The food_id must be an integer")
         parser.add_argument("location",
                             type=str,
                             required=True,
-                            help="The location field cant be empty")
-
+                            help="The location feild cant be empty")
+        parser.add_argument("quantity",
+                            type=int,
+                            required=True,
+                            help="The quantity field must me an integer")
         args = parser.parse_args()
 
         """ validate data sent """
-
-        if not args['food_name']:
-            return make_response(jsonify({"message":
-                                          "Please add the name of the food"}),
-                                 401)
-        if not args['quantity']:
-            return make_response(jsonify({"message":
-                                          "Add quantity"}),
-                                 401)
-
         if not args['location']:
             return make_response(jsonify({"message":
                                           "Please add your location"}),
                                  401)
 
-        if len(str(args['food_name'])) < 4:
-            return {'message': 'This field should be more than four characters'}, 400
+        if not args['quantity']:
+            return make_response(jsonify({"message":
+                                          "Add quantity"}),
+                                 401)
+        if re.compile('[!@#$%^&*:;?><.]').match(args['location']):
+            return {'message': 'Please dont input symbols'}, 400
+            
+        if re.compile('[   text]').match(args['location']):
+            return {'message': 'Please avoid adding spaces before characters'}, 400
+
+        if re.compile('[text   ]').match(args['location']):
+            return {'message': 'Please avoid adding spaces'}, 400
+
+        if len(str(args['location'])) < 4:
+            return {'message': 'Location is too short.'}, 400
+
+
+        """checking if the food menu has been creadted and
+           food_id exists on the food menu
+        """
+
+        food_id = args['food_id']
+        if len(food_items) > 0:
+            for item in range(len(food_items)):
+                if ((food_items[item]['food_id']) == int(food_id)):
+                    _food_id = food_items[item]['food_id']
+                    food_name = food_items[item]['food_name']
+                    print(food_name)
+                else:
+                    return {"message": 
+                            "The food item selected doesnt exist on the menu;please select other food_items available on the menu"}, 404
+        else:
+            return make_response(jsonify({'message': 'foodmenu doesnot exist'}), 404)
 
         """
         auto generating the order_id 
@@ -62,19 +82,11 @@ class OrdersList(Resource):
             order_id = len(orders_db)+1
 
         status = 'pending'
+        chars = string.whitespace + string.punctuation + string.digits
 
-        if len(food_items) == 0:
-            food_id = len(food_items)+1
-        else:
-            food_id = len(food_items)+1
-        
-        order = Order(order_id, food_id,
-                      args["food_name"], args["quantity"], args["location"], status)
-        
-        for odr in orders_db:
-            if args['food_name'].strip(" ") == odr['food_name'].strip(" "):
-                return make_response(jsonify({"massage": "order has alredy been placed"}), 400)
-        
+        """creating an instance of an order class"""
+        order = Order(_food_id, order_id,
+                      food_name, args['location'].strip(chars), args["quantity"], status)
 
         order.place_an_order()
         return make_response(jsonify({"massage": "Order has been created succesfully"}), 201)

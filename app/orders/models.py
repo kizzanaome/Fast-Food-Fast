@@ -10,17 +10,17 @@ orders_db = []
 class Order:
     """ Class for modeling orders """
 
-    def __init__(self, order_id,food_id,food_name, quantity,location, status):
+    def __init__(self, food_id,order_id,food_name,location,quantity, status):
         """
             This method acts as a constructor
             for our class, its used to initialise class attributes
         """
         self.order_id = order_id
-        self.food_id = food_id
-        self.food_name = food_name.strip(" ")
+        self.food_id =food_id
+        self.food_name = food_name
+        self.location = location
         self.quantity = quantity
-        self.location = location.strip(" ")
-        self.status = status.strip(" ")
+        self.status = status
 
     def place_an_order(self):
         """ 
@@ -30,10 +30,10 @@ class Order:
         order = {
 
             "order_id": self.order_id,
-            "food_id" : self.food_id,
+            "food_id":self.food_id,
             "food_name": self.food_name,
+            "location":self.location,
             "quantity": self.quantity,
-            "location" : self.location,
             "status": self.status
         }
 
