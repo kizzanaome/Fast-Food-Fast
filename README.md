@@ -21,7 +21,7 @@ Fast-Food-Fast is a food delivery service app for a restaurant.
 This website has no database so it may not store data entered into it.
 
 ## Authors
-- [Naome](https://github.com/kizzanaome)
+- [kizzanaome](https://github.com/kizzanaome)
 
 ## Acknowlegments
  - [W3schools](https://www.w3schools.com/) Online Web Tutorials
