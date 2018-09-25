@@ -1,4 +1,4 @@
-from flask import Flask, make_response, jsonify
+from flask import Flask, make_response, jsonify,abort
 from .models import Order, orders_db
 from app.food_items.models import Food, food_items
 from flask_restplus import reqparse, Resource
@@ -18,10 +18,10 @@ class OrdersList(Resource):
     def post(self):
         """ This method adds an order """
         parser = reqparse.RequestParser( )
-        parser.add_argument("food_name",
-                            type=str,
+        parser.add_argument("food_id",
+                            type=int,
                             required=True,
-                            help="The food_name must cant be empty")
+                            help="The food_id must be an integer")
         parser.add_argument("location",
                             type=str,
                             required=True,
@@ -32,25 +32,24 @@ class OrdersList(Resource):
                             help="The quantity field must me an integer")
         args = parser.parse_args()
 
+        """
+        auto generating the order_id 
+            
+        """
+        order_id = len(orders_db)+1
+        
         """ validate data sent """
         if not args['location']:
             return make_response(jsonify({"message":
                                           "Please add your location"}),
                                  401)
-
-        if not args['food_name']:
-            return make_response(jsonify({"message":
-                                          "Please add your food_namme"}),
-                                 401)
-
-
         if not args['quantity']:
             return make_response(jsonify({"message":
                                           "Add quantity"}),
                                  401)
         if re.compile('[!@#$%^&*:;?><.]').match(args['location']):
             return {'message': 'Please dont input symbols'}, 400
-            
+
         if re.compile('[   text]').match(args['location']):
             return {'message': 'Please avoid adding spaces before characters'}, 400
 
@@ -59,42 +58,38 @@ class OrdersList(Resource):
 
         if len(str(args['location'])) < 4:
             return {'message': 'Location is too short.'}, 400
-
+        chars = string.whitespace + string.punctuation + string.digits  
 
         """checking if the food menu has been creadted and
            food_id exists on the food menu
         """
-
-
-        food_name = args['food_name']
+                
+        food_id = args['food_id']
         if len(food_items) > 0:
-            for item in range(len(food_items)):
-                if ((food_items[item]['food_name']) == food_name):
-                    _food_name = food_items[item]['food_name']
-                    # food_id = food_items[item]['food_id']
-                    print(food_name)
-                else:
-                    return {"message": 
-                            "The food item selected doesnt exist on the menu;please select other food_items available on the menu"}, 404
+            if any(item["food_id"] == food_id for item in food_items):
+                for item in range(len(food_items)):
+                
+            # for item in range(len(food_items)):
+            #     if ((food_items[item]['food_id'] == food_id)):
+                    print("am here")
+                    _food_id = food_items[item]['food_id']
+                    food_name = food_items[item]['food_name']
+                   
+            else:
+                # print(food_name)
+                return {"message": 
+                        "The food item selected doesnt exist on the menu;please select other food_items available on the menu"}, 404
         else:
             return make_response(jsonify({'message': 'foodmenu doesnot exist'}), 404)
 
-           
-        """
-        auto generating the order_id 
-            
-        """
-        if len(orders_db) == 0:
-            order_id = len(orders_db)+1
-        else:
-            order_id = len(orders_db)+1
-
+      
+       
         status = 'pending'
         chars = string.whitespace + string.punctuation + string.digits
 
         """creating an instance of an order class"""
-        order = Order(order_id,
-                      _food_name, args['location'].strip(chars), args["quantity"], status)
+        order = Order( order_id,_food_id,
+                      food_name, args['location'].strip(chars), args["quantity"], status)
 
         for oder in orders_db:
             if food_name == oder["food_name"]:
