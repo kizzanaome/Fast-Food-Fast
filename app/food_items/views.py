@@ -26,7 +26,8 @@ class FoodItems(Resource):
 
         """auto generating food_id"""
 
-       
+        if len(food_items)==0:       
+            food_id = len(food_items)+1
         food_id = len(food_items)+1
 
         """ validate data sent """
@@ -55,7 +56,7 @@ class FoodItems(Resource):
             return {'message': 'food_name should be more than 4 characters'}, 400
 
         chars = string.whitespace + string.punctuation + string.digits
-        food = Food(food_id, args["food_name"].strip(chars), args["price"])
+        food = Food(food_id, args["food_name"], args["price"])
 
         for fd in food_items:
             if args['food_name'].strip(chars) == fd['food_name'].strip(chars):
