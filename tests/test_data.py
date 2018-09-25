@@ -6,7 +6,7 @@ food_menu = {
 }
 
 post_an_order = {
-    "food_id": 1,
+    "food_name": "pizza",
     "quantity": 3,
     "location": "mutundwe",
     "status": "pending"
@@ -14,19 +14,20 @@ post_an_order = {
 
 food_menu_2 = {
     "food_id": 2,
-    "food_name": "Hot dog",
+    "food_name": "Hotdog",
     "price": 20000
 
 }
 post_an_order_with_a_wrong_foodmenu_id = {
-    "food_id": 3,
+    "order_id":1,
+    "food_name": "pizza",
     "quantity": 3,
     "location": "mutundwe",
     "status": "pending"
 }
 
 post_with_empty_location={
-    "food_id": 3,
+    "food_name": "pizza",
     "quantity": 3,
     "location": "",
     "status": "pending"

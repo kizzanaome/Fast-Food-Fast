@@ -28,7 +28,7 @@ class BaseCase(unittest.TestCase):
         """Tests if the dummy data provided is
             an instance of the order class
         """
-        self.order = Order(1, 1, "rice and meat","Kampala",3,"pending")
+        self.order = Order(1, "rice and meat","Kampala",3,"pending")
         self.assertIsInstance(self.order, Order)
 
     def test_app_exixts(self):
