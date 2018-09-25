@@ -18,10 +18,10 @@ class OrdersList(Resource):
     def post(self):
         """ This method adds an order """
         parser = reqparse.RequestParser( )
-        parser.add_argument("food_id",
-                            type=int,
+        parser.add_argument("food_name",
+                            type=str,
                             required=True,
-                            help="The food_id must be an integer")
+                            help="The food_name must cant be empty")
         parser.add_argument("location",
                             type=str,
                             required=True,
@@ -37,6 +37,12 @@ class OrdersList(Resource):
             return make_response(jsonify({"message":
                                           "Please add your location"}),
                                  401)
+
+        if not args['food_name']:
+            return make_response(jsonify({"message":
+                                          "Please add your food_namme"}),
+                                 401)
+
 
         if not args['quantity']:
             return make_response(jsonify({"message":
@@ -59,12 +65,13 @@ class OrdersList(Resource):
            food_id exists on the food menu
         """
 
-        food_id = args['food_id']
+
+        food_name = args['food_name']
         if len(food_items) > 0:
             for item in range(len(food_items)):
-                if ((food_items[item]['food_id']) == int(food_id)):
-                    _food_id = food_items[item]['food_id']
-                    food_name = food_items[item]['food_name']
+                if ((food_items[item]['food_name']) == food_name):
+                    _food_name = food_items[item]['food_name']
+                    # food_id = food_items[item]['food_id']
                     print(food_name)
                 else:
                     return {"message": 
@@ -72,6 +79,7 @@ class OrdersList(Resource):
         else:
             return make_response(jsonify({'message': 'foodmenu doesnot exist'}), 404)
 
+           
         """
         auto generating the order_id 
             
@@ -85,9 +93,13 @@ class OrdersList(Resource):
         chars = string.whitespace + string.punctuation + string.digits
 
         """creating an instance of an order class"""
-        order = Order(_food_id, order_id,
-                      food_name, args['location'].strip(chars), args["quantity"], status)
+        order = Order(order_id,
+                      _food_name, args['location'].strip(chars), args["quantity"], status)
 
+        for oder in orders_db:
+            if food_name == oder["food_name"]:
+                return make_response(jsonify({"massage": "order has alredy been placed"}), 400)
+     
         order.place_an_order()
         return make_response(jsonify({"massage": "Order has been created succesfully"}), 201)
 
