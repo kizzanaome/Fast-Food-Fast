@@ -1,9 +1,10 @@
-from flask import Flask, make_response, jsonify,abort
+from flask import Flask, make_response, jsonify, abort
 from .models import Order, orders_db
 from app.food_items.models import Food, food_items
 from flask_restplus import reqparse, Resource
 import string
 import re
+
 
 class OrdersList(Resource):
 
@@ -17,11 +18,11 @@ class OrdersList(Resource):
 
     def post(self):
         """ This method adds an order """
-        parser = reqparse.RequestParser( )
-        parser.add_argument("food_id",
-                            type=int,
+        parser = reqparse.RequestParser()
+        parser.add_argument("food_name",
+                            type=str,
                             required=True,
-                            help="The food_id must be an integer")
+                            help="The food_name cant be empty")
         parser.add_argument("location",
                             type=str,
                             required=True,
@@ -32,13 +33,11 @@ class OrdersList(Resource):
                             help="The quantity field must me an integer")
         args = parser.parse_args()
 
-        """
-        auto generating the order_id 
-            
-        """
-        order_id = len(orders_db)+1
-        
         """ validate data sent """
+        if not args['food_name']:
+                    return make_response(jsonify({"message":
+                                                "Food_name field is required"}),
+                                        401)
         if not args['location']:
             return make_response(jsonify({"message":
                                           "Please add your location"}),
@@ -50,53 +49,62 @@ class OrdersList(Resource):
         if re.compile('[!@#$%^&*:;?><.]').match(args['location']):
             return {'message': 'Please dont input symbols'}, 400
 
+        if re.compile('[!@#$%^&*:;?><.]').match(args['food_name']):
+            return {'message': 'Please dont input symbols'}, 400
+
         if re.compile('[   text]').match(args['location']):
             return {'message': 'Please avoid adding spaces before characters'}, 400
 
-        if re.compile('[text   ]').match(args['location']):
-            return {'message': 'Please avoid adding spaces'}, 400
+        if re.compile('[    text]').match(args['food_name']):
+            return {'message': 'Please avoid adding spaces before characters'}, 400
 
         if len(str(args['location'])) < 4:
             return {'message': 'Location is too short.'}, 400
-        chars = string.whitespace + string.punctuation + string.digits  
+
+        if len(str(args['food_name'])) < 4:
+            return {'message': 'food_name is too short.'}, 400
+
+        if re.compile('[text   0]').match(args['food_name']):
+            return {'message': 'Please avoid adding spaces'}, 400
 
         """checking if the food menu has been creadted and
            food_id exists on the food menu
         """
-                
-        food_id = args['food_id']
+
+        if len(orders_db) == 0:
+            order_id = len(orders_db)+1
+        order_id = len(orders_db)+1
+
+        food_name = args['food_name']
+
+        """
+            looping through the food_items list 
+
+        """
         if len(food_items) > 0:
-            if any(item["food_id"] == food_id for item in food_items):
-                for item in range(len(food_items)):
-                
-            # for item in range(len(food_items)):
-            #     if ((food_items[item]['food_id'] == food_id)):
-                    print("am here")
-                    _food_id = food_items[item]['food_id']
-                    food_name = food_items[item]['food_name']
-                   
-            else:
-                # print(food_name)
-                return {"message": 
-                        "The food item selected doesnt exist on the menu;please select other food_items available on the menu"}, 404
+            for food in food_items[0:4]:
+                if(food['food_name'] == food_name):
+                    food_name = food['food_name']
+                    food_id = food['food_id']
+                    print(food)
+
+                    status = 'pending'
+                    chars = string.whitespace + string.punctuation + string.digits
+
+                    """creating an instance of an order class"""
+                    order = Order(order_id, 'food_id',
+                                  food_name, args['location'].strip(chars), args["quantity"], 'price', status)
+
+                    for oder in orders_db:
+                        if food_name == oder["food_name"]:
+                            return make_response(jsonify({"massage": "order has alredy been placed"}), 400)
+
+                    order.place_an_order()
+                    return make_response(jsonify({"massage": "Order has been created succesfully"}), 201)
+
         else:
-            return make_response(jsonify({'message': 'foodmenu doesnot exist'}), 404)
-
-      
-       
-        status = 'pending'
-        chars = string.whitespace + string.punctuation + string.digits
-
-        """creating an instance of an order class"""
-        order = Order( order_id,_food_id,
-                      food_name, args['location'].strip(chars), args["quantity"], status)
-
-        for oder in orders_db:
-            if food_name == oder["food_name"]:
-                return make_response(jsonify({"massage": "order has alredy been placed"}), 400)
-     
-        order.place_an_order()
-        return make_response(jsonify({"massage": "Order has been created succesfully"}), 201)
+            return {"message": "Foodmenu is not available"}, 404
+        return {'massage': 'Foodname doesnt exist on the foodmenu'}, 404
 
 
 class SingleOrder(Resource):
